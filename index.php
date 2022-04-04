@@ -1,20 +1,15 @@
 <?php
-/**
-* Main template file
-*
-*@package Aquila
+/*
+*   Main File
+* 
+*   @package Aquila 
 */
+get_header();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-    <title>Main File</title>
-</head>
-<body>
-    <h1>Main File</h1>
-</body>
-</html>
+<div class="content">
+    <h1>Content</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, minima dolorum sit dolorem deserunt necessitatibus odio quos quo eligendi veniam quae, fugit molestiae nesciunt ullam labore similique nobis nostrum nam.</p>
+</div>
+<?php
+get_footer();
+?>
