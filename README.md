@@ -47,4 +47,4 @@ Here is a simple footnote[^1].
 # What Do You Think About This?
 @shahid-mughal02
 
-## ***Good Luck :+1:*** 
+## ***Good Luck*** :+1:
