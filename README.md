@@ -41,6 +41,7 @@ git commit
 
 # FootNotes
 Here is a simple footnote[^1].
+
 [^2] Here is a simple footnote.
 
 # What Do You Think About This?
