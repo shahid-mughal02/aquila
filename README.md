@@ -37,7 +37,7 @@ git commit
 - [x] Files Completed #10 :tada:
 - [ ] Posts Page Not Set Yet.
 - [ ] Category Page Not Set Yet.
-- [ ] /(Optional) You May Like.
+- [ ] \(Optional) You May Like.
 
 # FootNotes
 - Here is a simple footnote[^1].
