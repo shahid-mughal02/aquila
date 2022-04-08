@@ -26,3 +26,10 @@ body{
 input,textarea{
     width: 100%;
 }
+img{
+    width: 100%;
+    height: auto;
+}
+.updated:not(.published){
+    display: none;
+}

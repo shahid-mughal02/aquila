@@ -17,6 +17,7 @@ class AQUILA_THEME
         //load class
         Assets::get_instance();
         Menus::get_instance();
+        Meta_Boxes::get_instance();
 
         $this->setup_hooks();
     }
@@ -31,6 +32,8 @@ class AQUILA_THEME
     }
     public function setup_theme()
     {
+
+        add_image_size( 'featured-thumbnail', 260, 170, false );
 
         add_theme_support('title-tag');
 

@@ -7,8 +7,10 @@
 get_header();
 ?>
 <div class="content">
+    <h1>Index</h1>
     <?php esc_html_e( 'Content Index', 'aquila' ) ?>
 </div>
+<?php if( is_home()): ?>
 <div id="primary">
     <main id="main" class="site-main mt-5" role="main">
         <?php if( have_posts( ) ): ?>
@@ -26,6 +28,8 @@ get_header();
         <?php endif; ?>
     </main>
 </div>
+<?php endif; ?>
+<?php the_content(); ?>
 <?php
 get_footer();
 ?>
