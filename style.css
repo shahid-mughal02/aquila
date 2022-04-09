@@ -29,7 +29,16 @@ input,textarea{
 img{
     width: 100%;
     height: auto;
+    display: block;
 }
 .updated:not(.published){
     display: none;
+}
+.size-featured-image{
+    height: 250px;
+    object-fit: cover;
+}
+.page-numbers.current span{
+    background-color: cadetblue;
+    color: white;
 }

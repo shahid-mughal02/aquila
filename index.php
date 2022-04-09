@@ -13,8 +13,8 @@ get_header();
 <?php if( is_home()): ?>
 <div id="primary">
     <main id="main" class="site-main mt-5" role="main">
-        <?php if( have_posts( ) ): ?>
         <div class="container">
+        <?php if( have_posts( ) ): ?>
             <div class="row">
                 <?php while( have_posts() ): the_post(); ?>
                 <div class="col-md-3 col-sm-4 col-6">
@@ -22,10 +22,12 @@ get_header();
                 </div>
                 <?php endwhile; ?>
             </div>
+            <?php else: ?>
+                <?php get_template_part( 'template-parts/content-none' ); ?>
+                <?php endif;
+        aquila_pagination();
+        ?>
         </div>
-        <?php else: ?>
-            <?php get_template_part( 'template-parts/content-none' ); ?>
-        <?php endif; ?>
     </main>
 </div>
 <?php endif; ?>

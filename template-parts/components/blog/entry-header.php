@@ -14,7 +14,19 @@ $heading_class = ! empty( $hide_title ) && 'yes' === $hide_title ? 'hide' : '';
 <?php if( $has_post_thumbnail ): ?>
 <header>
     <div class="entry-image mb-3">
-        <a href="<?php echo esc_url( the_permalink() ); ?>">
+        <?php if( is_single() ): ?>
+            <?php
+            the_post_custom_thumbnail(
+                $the_post_id,
+                'featured-thumbnail',
+                [
+                    'size' => '(max-width: 560px) 260px, 170px',
+                    'class' => 'attachement-featured-large size-featured-image'
+                ]
+                );
+            ?>
+        <?php else: ?>
+            <a href="<?php echo esc_url( the_permalink() ); ?>">
             <?php
             the_post_custom_thumbnail(
                 $the_post_id,
@@ -26,6 +38,7 @@ $heading_class = ! empty( $hide_title ) && 'yes' === $hide_title ? 'hide' : '';
                 );
             ?>
         </a>
+        <?php endif; ?>
     </div>
     <?php 
     //Title

@@ -51,9 +51,71 @@ function aquila_posted_on()
     );
 
     $posted_on = sprintf(
-        esc_html_x('Posted on %s', 'post date', 'aquila'),
+        esc_html_x(' Posted on %s', 'post date', 'aquila'),
         '<a href="' . esc_url(get_the_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
     );
 
     echo '<span class="posted-on text-secondary">' . $posted_on . '<span>';
+}
+
+/**
+ * Get Author Name
+ *
+ * @retun author
+ */
+function aquila_posted_by()
+{
+    $byline = sprintf(
+        esc_html_x('by %s', 'post author', 'aquila'),
+        '<span class="author vcard"><a href="' . get_author_posts_url(get_the_author_meta('ID')) . '">
+        ' . esc_html(get_the_author()) . '
+        </a></span>'
+    );
+    echo '<span class="byline text-secondary">' . $byline . '<span>';
+}
+
+function aquila_the_excerpt($trim_character_count = 0)
+{
+    if (!has_excerpt() || 0 === $trim_character_count) {
+        the_excerpt();
+        return;
+    }
+
+    $excerpt = wp_strip_all_tags(get_the_excerpt());
+    $excerpt = substr($excerpt, 0, $trim_character_count);
+    $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
+
+    echo $excerpt . '[...]';
+}
+
+function aquila_excert_more($more = '')
+{
+    if (!is_single()) {
+        $more = sprintf(
+            '<button class="border-0"><a href="%1$s" class="aquila-read-more btn btn-success">%2$s</a></button>',
+            get_permalink(get_the_ID()),
+            __('Read more', 'aquila')
+        );
+    }
+    return $more;
+}
+
+function aquila_pagination()
+{
+    $allowed_tags = array(
+        'span' => array(
+            'class' => array()
+        ),
+        'a' => array(
+            'class' => array(),
+            'href' => array()
+        )
+    );
+
+    $args = array(
+        'before_page_number' => '<span class="btn btn-outline-success me-2 mb-2">',
+        'after_page_number' => '</span>'
+    );
+    printf( '<div class="aquila-pagination">%s</div>',
+    wp_kses( paginate_links( $args ), $allowed_tags ));
 }
