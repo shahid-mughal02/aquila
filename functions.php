@@ -19,14 +19,14 @@ function aquila_get_theme_instance()
     \AQUILA_THEME\Inc\AQUILA_THEME::get_instance();
 }
 aquila_get_theme_instance();
-// echo '<pre>';
-// print_r(AQUILA_DIR_PATH);
-// wp_die();
 
-function aquila_enqueue_scripts()
-{
+//Remvoe Guten Block library css from loading on the frontend
+// function ebavads_remove_block_styles()
+// {
+//     wp_dequeue_style('wp-block-library');
+//     wp_dequeue_style('wp-block-library-theme');
+//     wp_dequeue_style('wp-block-style'); //remove wooCommerce block css
     
-    
-}
-add_action('wp_enqueue_scripts', 'aquila_enqueue_scripts')
+// }
+// add_action('wp_enqueue_scripts', 'ebavads_remove_block_styles', 100)
 ?>

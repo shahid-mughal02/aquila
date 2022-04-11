@@ -10,10 +10,24 @@ const entry = {
 };
 const output = {
     path: BUIL_DIR,
-    filename: "/js/[name].js"
+    filename: "js/[name].js"
 };
 
+const rules =[
+    {
+        test: /\.js$/,
+        include: [ JS_DIR ],
+        exclude: /node_modules/,
+        use: 'babel-loader'
+    },
+    {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: 'css-loader'
+    }
+];
 module.exports = ( env, argv ) => ({
     entry: entry,
-    output: output
+    output: output,
+    devtool: 'source-map',
 })

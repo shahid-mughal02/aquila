@@ -43,7 +43,7 @@ class Assets
     public function register_scripts()
     {
         //Register Scripts
-        wp_register_script('main-js', AQUILA_DIR_URI . '/assets/main.js', ['jquery'], filemtime(AQUILA_DIR_PATH . '/assets/main.js'), true);
+        wp_register_script('main-js', AQUILA_DIR_URI . '/assets/src/js/main.js', ['jquery'], filemtime(AQUILA_DIR_PATH . '/assets/src/js/main.js'), true);
         wp_register_script('bootstrap-js', AQUILA_DIR_URI . '/assets/src/library/js/bootstrap.min.js', null, false, true);
 
         //Enqueue Sscript
