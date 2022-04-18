@@ -13,7 +13,7 @@ get_header();
 <?php if( is_home()): ?>
 <div id="primary">
     <main id="main" class="site-main mt-5" role="main">
-        <div class="container">
+        <div class="container custom_sapcing">
         <?php if( have_posts( ) ): ?>
             <div class="row">
                 <?php while( have_posts() ): the_post(); ?>

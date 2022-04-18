@@ -22,6 +22,7 @@ class AQUILA_THEME
         Block_Patterns::get_instance();
         Register_Post_Type::get_instance();
         Register_Taxonomies::get_instance();
+        Customizer::get_instance();
 
         $this->setup_hooks();
     }

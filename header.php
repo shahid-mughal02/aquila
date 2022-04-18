@@ -17,6 +17,12 @@
         .custom-logo{
             width: 50px;
         }
+        .header-bg-color{
+            background-color: <?php echo get_theme_mod( 'aquila_nav_bg_color'); ?> !important;
+        }
+        .custom_sapcing{
+            gap: <?php echo get_theme_mod( 'aquila_post_spacing'); ?>px !important;
+        }
     </style>
 </head>
 

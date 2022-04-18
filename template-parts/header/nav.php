@@ -10,7 +10,7 @@ $header_menu_id = $menu_class->get_menu_id( 'aquila-header-menu' );
 $header_menus = wp_get_nav_menu_items( $header_menu_id );
 
 ?>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md header-bg-color navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="<?php echo site_url(); ?>">
             <?php
